@@ -1,0 +1,104 @@
+// *= require store/spree_frontend
+// *= require_self
+
+@import "vars",
+        "mixins",
+        "susy";
+
+@import "bourbon/bourbon";
+
+// variables
+$quiz-width: percentage(660/980);
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+// we can't use extends from the main stylesheet for some reason
+// probably for the best though since it makes the extension more modular
+// so we're just re-creatiung the ones we need here.
+%upcase {
+  text-transform:uppercase;
+}
+
+.quiz {
+  #wrapper {
+    background:none;
+  }
+
+  .content, #progress {
+    background:#FFF;
+  }
+
+  .content {
+    padding:40px;
+  }
+
+  #progress {
+    margin:10px 0;
+
+    .step, .ico-arr-right {
+      padding:0 20px;
+    }
+
+    .step {
+      @extend %upcase;
+      line-height:77px;
+      text-align:center;
+    }
+
+    .ico-arr-right {
+      font-size:50px;
+      color:$tan-light;
+      line-height:8px;
+    }
+
+    .current {
+      color:$turq-dark;
+      font-family:$museo-bold;
+    }
+  }
+
+  .bars, nav {
+    width:$quiz-width;
+    margin:0 auto;
+  }
+
+  .opt {
+    background:$turq-medium;
+    display:block;
+    font-size:14px; // this might be wrong since I just measured from a JPG. TODO: update the font-family
+    line-height:66px;
+    margin:5px 0;
+    padding:0;
+    text-align:center;
+    text-transform:none;
+    width:100%;
+
+    &:hover {
+
+      background:$turq-dark;
+    }
+  }
+
+  nav {
+    margin-top:44px;
+
+    .btn-prev {
+      padding:0;
+      color:$gray-light;
+      background:none;
+      line-height:55px;
+
+      .ico-arr-left {
+        font-size:8px;
+      }
+    }
+
+    .btn-next {
+      float:right;
+    }
+  }
+
+
+}
+
