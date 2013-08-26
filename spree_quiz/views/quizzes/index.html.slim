@@ -1,0 +1,27 @@
+= content_for :body_class
+  quiz
+
+section#quiz
+  = render partial: 'spree/shared/progress_bar'
+
+  #content
+    ul.bars
+      li
+        button.opt
+          under 18
+      li
+        button.opt
+          19-29
+      li
+        button.opt
+          30-39
+      li
+        button.opt
+          40-49
+      li
+        button.opt
+          50-59
+      li
+        button.opt
+          60+
+    = render partial: 'spree/shared/navigation'
