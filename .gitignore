@@ -22,3 +22,5 @@ config/database.yml
 
 # Spree files
 public/spree
+
+spree_quiz
